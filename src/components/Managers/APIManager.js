@@ -6,7 +6,7 @@ export const getMoods = () => {
 }
 
 export const getBooks = () => {
-    return fetch(`http://localhost:8088/books?_expand=bookGenre`)
+    return fetch(`http://localhost:8088/books`)
     .then(response => response.json())
 }
 

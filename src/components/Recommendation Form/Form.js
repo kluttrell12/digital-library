@@ -3,16 +3,18 @@ import { useNavigate } from "react-router-dom"
 
 export const Form = () => {
     /*
-        TODO: Add the correct default properties to the
+        TODO: Add the corbookt default properties to the
         initial state object
     */
-    const [rec, update] = useState({
+    const [book, update] = useState({
         genre: "",
         title: "",
         author: ""
     })
+
+    const [success, setSuccess] = useState(false)
     /*
-        TODO: Use the useNavigation() hook so you can redirect
+        TODO: Use the useNavigation() hook so you can redibookt
         the user to the ticket list
     */
     const navigate = useNavigate()
@@ -22,18 +24,12 @@ export const Form = () => {
     const handleSaveButtonClick = (event) => {
         event.preventDefault()
 
-        // TODO: Create the object to be saved to the API
-
-        // "userId": 3,
-        // "description": "Vero est adipisci sed natus quasi consectetur occaecati. Modi maxime sunt officia cumque. Vel at culpa. Sint accusamus deserunt dolorem qui.",
-        // "emergency": true,
-        // "dateCompleted": ""
-
         const formToSendToAPI = {
             userId: libraryUserObject.id,
-            bookGenre: rec.genre,
-            bookTitle: rec.title,
-            bookAuthor: rec.author
+            bookGenre: book.genre,
+            bookTitle: book.title,
+            bookAuthor: book.author,
+            dateSubmitted: new Date()
         }
 
         // TODO: Perform the fetch() to POST the object to the API
@@ -41,19 +37,20 @@ export const Form = () => {
         return fetch(`http://localhost:8088/recommendations`, {
             method: "POST",
             headers: {
-                "Content-Type" : "application/json"
+                "Content-Type": "application/json"
             },
             body: JSON.stringify(formToSendToAPI)
         })
             .then(response => response.json())
             .then(() => {
-                navigate("/recommendations")
+                // navigate("/cart") 
             })
     }
 
     return (
-        <form className="recForm">
-            <h2 className="recForm__title">Book Recommendation</h2>
+        <form className="bookForm">
+            <h2 className="bookForm__title">Book Recommendation Form</h2>
+            <div>{success ? "Success!" : ""}</div>
             <fieldset>
                 <div className="form-group">
                     <label htmlFor="bookGenre">Book Genre:</label>
@@ -62,10 +59,10 @@ export const Form = () => {
                         type="text"
                         className="form-control"
                         placeholder=""
-                        value={rec.genre}
+                        value={book.genre}
                         onChange={
                             (evt) => {
-                                const copy = {...rec}
+                                const copy = { ...book }
                                 copy.genre = evt.target.value
                                 update(copy)
                             }
@@ -80,10 +77,10 @@ export const Form = () => {
                         type="text"
                         className="form-control"
                         placeholder=""
-                        value={rec.title}
+                        value={book.title}
                         onChange={
                             (evt) => {
-                                const copy = {...rec}
+                                const copy = { ...book }
                                 copy.title = evt.target.value
                                 update(copy)
                             }
@@ -98,19 +95,22 @@ export const Form = () => {
                         type="text"
                         className="form-control"
                         placeholder=""
-                        value={rec.author}
+                        value={book.author}
                         onChange={
                             (evt) => {
-                                const copy = {...rec}
+                                const copy = { ...book }
                                 copy.author = evt.target.value
                                 update(copy)
                             }
                         } />
                 </div>
             </fieldset>
-            <button 
-            onClick = {(clickEvent) => handleSaveButtonClick(clickEvent)}
-            className="btn btn-primary">
+            <button
+                onClick={(clickEvent) => {
+                    setSuccess(true)
+                    handleSaveButtonClick(clickEvent)
+                }}
+                className="btn btn-primary">
                 Submit Book
             </button>
         </form>

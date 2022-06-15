@@ -1,7 +1,7 @@
-import { Link, useNavigate } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 import { useEffect, useState } from "react"
 
-export const Library = ({id, bookGenre, bookTitle, bookAuthor, bookGenreId}) => {
+export const Library = () => {
     const [genres, setGenres] = useState([])
     const navigate = useNavigate()
     useEffect(
@@ -21,12 +21,12 @@ export const Library = ({id, bookGenre, bookTitle, bookAuthor, bookGenreId}) => 
      {
          genres.map(
              (genre) =>{
-                 return <section className="library">
+                 return <section className="library" key={genre.id}>
                  <div>
-                     <Link to={`/library`}>{genre.genre}</Link>
+                     {genre.genre}
                  </div>
                  <button
-                  onClick={() => navigate(`/library/${id}`)}>See Books
+                  onClick={() => navigate(`/library/${genre.id}`)}>See Books
                 </button>
              </section>
              }
