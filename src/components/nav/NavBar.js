@@ -5,17 +5,20 @@ export const NavBar = () => {
     const navigate = useNavigate()
     return (
         <ul className="navbar">
-            <li className="navbar__item active">
-                <Link className="navbar__link" to="/moods">Moods</Link>
+             <li className="navbar__item active">
+                <Link className="navbar__link" to="/home">Home</Link>
             </li>
             <li className="navbar__item active">
                 <Link className="navbar__link" to="/library">Library</Link>
             </li>
             <li className="navbar__item active">
-                <Link className="navbar__link" to="/recommendations">Recommendation Form</Link>
+                <Link className="navbar__link" to="/genres">Genres</Link>
             </li>
             <li className="navbar__item active">
-                <Link className="navbar__link" to="/cart">Cart</Link>
+                <Link className="navbar__link" to="/moods">Moods</Link>
+            </li>
+            <li className="navbar__item active">
+                <Link className="navbar__link" to="/myList">My List</Link>
             </li>
             {
                 localStorage.getItem("library_user")
