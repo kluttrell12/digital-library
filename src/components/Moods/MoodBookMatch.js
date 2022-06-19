@@ -14,40 +14,39 @@ const AddBookToMyList = (userId, bookId) => {
     })
 }
 
-export const Library = () => {
-
-    const [books, setBooks] = useState([])
+export const MoodBookList = ({mood}) => {
+    const [books, updateBooks] = useState([])
 
     useEffect(
         () => {
-            fetch(`http://localhost:8088/books`)
+            fetch(`http://localhost:8088/books?moodId=${mood.id}`)
                 .then(response => response.json())
                 .then((bookArray) => {
-                    setBooks(bookArray)
+                    updateBooks(bookArray)
                 })
         },
         []
     )
 
+
     return <>
-        <h3>Complete Collection of Books</h3>
         <article>
+
             {
                 books.map(
                     (book) => {
                         return <section className="library" key={book.id}>
-                            <h4>{book.title}</h4>
-                            <h4>Written by {book.author}</h4>
+                            <p>{book.title}</p>
+                            <p>Written By {book.author}</p>
+                            <br></br>
                             <button
                                 onClick={() => AddBookToMyList(libraryUserObject.id, book.id)}
                             >Add to My List</button>
                         </section>
+
                     })
+
             }
         </article>
-
-
-    </>
-
-
+        </>
 }
