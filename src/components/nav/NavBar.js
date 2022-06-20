@@ -12,13 +12,7 @@ export const NavBar = () => {
                 <Link className="navbar__link" to="/library">Library</Link>
             </li>
             <li className="navbar__item active">
-                <Link className="navbar__link" to="/genres">Genres</Link>
-            </li>
-            <li className="navbar__item active">
-                <Link className="navbar__link" to="/moods">Moods</Link>
-            </li>
-            <li className="navbar__item active">
-                <Link className="navbar__link" to="/myList">My List</Link>
+                <Link className="navbar__link" to="/profile">Profile</Link>
             </li>
             {
                 localStorage.getItem("library_user")

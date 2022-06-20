@@ -76,7 +76,7 @@ export const Form = () => {
 
     return (
         <form className="recForm">
-            <h2 className="recForm__title">Book Recommendation Form</h2>
+            <h2 className="recForm__title">New Book Recommendation Form</h2>
             <fieldset>
                 <div className="form-group">
                     <label htmlFor="bookTitle">Book Title:</label>

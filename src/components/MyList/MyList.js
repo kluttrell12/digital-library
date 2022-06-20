@@ -37,7 +37,7 @@ export const MyList = () => {
         <article>
             {
                 selectedBooks.map(
-                    (book) => {
+                    book => {
                         return <section key={book.id}>
                                 <Book book={book} />
                                 <button

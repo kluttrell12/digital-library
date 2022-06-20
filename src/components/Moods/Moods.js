@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react"
+import { useNavigate } from "react-router-dom"
 import { MoodBookList } from "./MoodBookMatch"
 
 export const Moods = () => {
     const [moods, setMoods] = useState([])
+    const navigate = useNavigate()
 
     useEffect(
         () => {
@@ -18,6 +20,13 @@ export const Moods = () => {
     return <>
 
     <h2>Books by Mood</h2>
+    <button onClick={() => navigate("/library")}>Back to Library</button>
+    <br></br>
+    <button onClick={() => navigate("/library/genres")}>See Books sorted by Genre</button>
+    <br></br>
+    <button onClick={() => navigate("/library/recommendation")}>Recommend a book</button>
+    <br></br>
+    <button onClick={() => navigate("/library/myList")}>See My List of Books</button>
         <article>
             {
                 moods.map(

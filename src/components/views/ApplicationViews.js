@@ -4,6 +4,9 @@ import { Home } from "../Home/Home"
 import { Library } from "../Library/Library"
 import { Moods } from "../Moods/Moods"
 import { MyList } from "../MyList/MyList"
+import { ReaderForm } from "../Profile/ReaderForm"
+import { Form } from "../RecommendationForm/Form"
+import { SuccessPage } from "../RecommendationForm/SuccessPage"
 
 
 export const ApplicationViews = () => {
@@ -15,10 +18,13 @@ export const ApplicationViews = () => {
         </>
         }>
             <Route path="home" element={ <Home />}/>
-            <Route path="genres" element={< Genres/>}/>
-            <Route path="moods" element={ <Moods />}/>
             <Route path="library" element = {< Library/>} />
-            <Route path="myList" element = {< MyList/>} />
+            <Route path="library/genres" element={< Genres/>}/>
+            <Route path="library/moods" element={ <Moods />}/>
+            <Route path="profile" element={ < ReaderForm/>}/>
+            <Route path="library/recommendation" element={ <Form /> } />
+            <Route path="library/success" element={ <SuccessPage /> } />
+            <Route path="library/myList" element = {< MyList/>} />
 
         </Route>
     </Routes>
