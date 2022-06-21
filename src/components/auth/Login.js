@@ -15,7 +15,7 @@ export const Login = () => {
                     localStorage.setItem("library_user", JSON.stringify({
                         id: user.id
                     }))
-                    navigate("/")
+                    navigate("/home")
                 }
                 else {
                     window.alert("Invalid login")
@@ -38,7 +38,7 @@ export const Login = () => {
                             required autoFocus />
                     </fieldset>
                     <fieldset>
-                        <button type="submit">
+                        <button>
                             Sign in
                         </button>
                     </fieldset>

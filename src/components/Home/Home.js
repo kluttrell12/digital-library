@@ -10,6 +10,7 @@ export const Home = () => {
         <div>
 
         <h1>Welcome to The Digital Library</h1>
+
         <button onClick={() => navigate("/library")}>See entire Library Selection</button>
         <br></br>
         <button onClick={() => navigate("/library/moods")}>See books sorted by Mood</button>

@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react"
+import { useNavigate } from "react-router-dom"
 import { Book } from "../Book/Book"
 
 const localLibraryUser = localStorage.getItem("library_user")
@@ -18,6 +19,7 @@ const DeleteBookFromList = (id) => {
 export const MyList = () => {
 
     const [selectedBooks, setSelected] = useState([])
+    const navigate = useNavigate()
 
     useEffect(
         () => {
@@ -33,12 +35,14 @@ export const MyList = () => {
 
     return <>
         <h2>Your List of Books</h2>
+        <button onClick={() => navigate("/library")}>Return to Library</button>
+
 
         <article>
             {
                 selectedBooks.map(
-                    book => {
-                        return <section key={book.id}>
+                    (book) => {
+                        return <section>
                                 <Book book={book} />
                                 <button
                                     onClick={

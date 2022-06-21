@@ -34,7 +34,7 @@ export const Form = () => {
                         updateRec(copy)
                     }
                 } >
-                    <option value="⬇️ Select a genre ⬇️">
+                    <option value="Select a genre">
                         -- Select a genre --
                     </option>
                     {genres.map((genre) => <option value={genre.value}>{genre.label}</option>)}

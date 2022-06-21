@@ -21,7 +21,7 @@ export const Register = (props) => {
                     localStorage.setItem("library_user", JSON.stringify({
                         id: createdUser.id,
                     }))
-                    navigate("/")
+                    navigate("/newReaderForm")
                 }
             })
     }
@@ -62,7 +62,8 @@ export const Register = (props) => {
                         placeholder="Email address" required />
                 </fieldset>
                 <fieldset>
-                    <button type="submit"> Register </button>
+                    <button
+                    type="submit"> Register </button>
                 </fieldset>
             </form>
             <footer>

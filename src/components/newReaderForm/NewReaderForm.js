@@ -1,27 +1,16 @@
-import { useEffect, useState } from "react"
+import { useState } from "react"
 import { useNavigate } from "react-router-dom"
 
-export const ReaderForm = () => {
+export const NewReaderForm = () => {
 
-    const [profile, updateProfile] = useState({
+    const [newReader, updateNewReader] = useState({
         favoriteGenre: "",
-        booksRead: 0,
-        userId: 0
+        booksRead: 0
     })
+
+    const navigate = useNavigate()
     const localLibraryUser = localStorage.getItem("library_user")
     const libraryUserObject = JSON.parse(localLibraryUser)
-    const navigate = useNavigate()
-
-    useEffect(() => {
-        fetch(`http://localhost:8088/readers?userId=${libraryUserObject.id}`)
-            .then(response => response.json())
-            .then((data) => {
-                const readerData = data[0]
-                updateProfile(readerData)
-            })
-    },
-        []
-    )
 
     const HandleGenreRadioButtons = () => {
         let genres = [
@@ -37,13 +26,11 @@ export const ReaderForm = () => {
         return <article>
             <div className="genreSelect">
                 <br />
-                <div>Favorite Genre: {profile.favoriteGenre}</div>
-                <select 
-                onChange={
+                <select onChange={
                     (evt) => {
-                        const copy = { ...profile }
+                        const copy = { ...newReader }
                         copy.favoriteGenre = evt.target.value
-                        updateProfile(copy)
+                        updateNewReader(copy)
                     }
                 } >
                     <option value="Select a genre">
@@ -58,28 +45,38 @@ export const ReaderForm = () => {
 
     }
 
-
     const handleSaveButtonClick = (event) => {
         event.preventDefault()
 
-        return fetch(`http://localhost:8088/readers/${profile.id}`, {
-            method: "PUT",
+        const readerToSendToAPI = {
+
+            userId: libraryUserObject.id,
+            favoriteGenre: newReader.favoriteGenre,
+            booksRead: newReader.booksRead,
+            dateCompleted: new Date()
+        }
+        return fetch(`http://localhost:8088/readers`, {
+            method: "post",
             headers: {
                 "Content-Type": "application/json"
             },
-            body: JSON.stringify(profile)
+            body: JSON.stringify(readerToSendToAPI)
         })
             .then(response => response.json())
             .then(() => {
-                navigate("/successChange")
+                navigate("/home")
+
             })
+
+
+
     }
 
     return (
-        <form className="profile">
-            <h2 className="profile__title">Edit Your Reader Profile</h2>
+        <form className="newReaderForm">
+            <h2 className="recForm__title">Please Fill Out our New Reader Form</h2>
             <fieldset>
-                <div className="form-group">
+            <div className="form-group">
                     <label htmlFor="favoriteGenre">Select a Favorite Genre</label>
                     <div>
                         {HandleGenreRadioButtons()}
@@ -87,25 +84,28 @@ export const ReaderForm = () => {
                 </div>
             </fieldset>
             <fieldset>
-                <div className="form-group">
+            <div className="form-group">
                     <label htmlFor="booksRead">Books Read:</label>
                     <input type="number"
                         className="form-control"
-                        value={profile.booksRead}
+                        value={newReader.booksRead}
                         onChange={
                             (evt) => {
-                                const copy = { ...profile }
+                                const copy = { ...newReader }
                                 copy.booksRead = parseInt(evt.target.value)
-                                updateProfile(copy)
+                                updateNewReader(copy)
                             }
                         } />
                 </div>
             </fieldset>
             <button
-                onClick={(clickEvent) => handleSaveButtonClick(clickEvent)}
+                onClick={
+                    (clickEvent) => handleSaveButtonClick(clickEvent)
+                }
                 className="btn btn-primary">
-                Save Changes
+                Go to Digital Library
             </button>
         </form>
     )
 }
+
