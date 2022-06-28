@@ -7,16 +7,15 @@ export const Home = () => {
 
     return <article>
 
-        <div>
 
-        <h1>Welcome to The Digital Library</h1>
+        <div className="titlePage">Welcome to The Digital Library</div>
+
+
+        <div className="button__library">
 
         <button onClick={() => navigate("/library")}>See entire Library Selection</button>
-        <br></br>
         <button onClick={() => navigate("/library/moods")}>See books sorted by Mood</button>
-        <br></br>
         <button onClick={() => navigate("/library/genres")}>See Books sorted by Genre</button>
-        <br></br>
         <button onClick={() => navigate("/library/recommendation")}>Recommend a book</button>
 
         </div>

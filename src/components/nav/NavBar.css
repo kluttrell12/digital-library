@@ -1,12 +1,28 @@
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Quicksand&display=swap');
+
+
 .navbar {
     display: flex;
-    flex-wrap: nowrap;
-    justify-content: left;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding: 1rem 1rem 1rem;
 }
 .navbar__item {
-    flex-basis: 20%;
-    list-style-type: none;
+    flex-basis: 5%;
+    text-align: center;
+    list-style-type: none; 
+  
 }
-.navbar__logout {
-    margin-left: auto;
+/* .navbar__logout {
+    
+} */
+
+.navbar__link {
+    padding: .35rem;
+    font-family: 'Muli', sans-serif;
+    font-size: 1.2rem;
+    font-style: bold;
+    text-decoration: none;
+    color: black;
 }

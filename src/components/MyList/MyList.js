@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
-import { Book } from "../Book/Book"
+import "./MyList.css"
 
 const localLibraryUser = localStorage.getItem("library_user")
 const libraryUserObject = JSON.parse(localLibraryUser)
@@ -34,32 +34,38 @@ export const MyList = () => {
 
 
     return <>
-        <h2>Your List of Books</h2>
+        <div className="titlePage">Your List of Books</div>
+        <div className="button_List">
         <button onClick={() => navigate("/library")}>Return to Library</button>
+        </div>
 
 
-        <article>
+        <article className="bookContainer">
             {
                 selectedBooks.map(
                     (book) => {
-                        return <section>
-                                <Book book={book} />
-                                <button
-                                    onClick={
-                                        () => {
-                                            DeleteBookFromList(book.id)
-                                            fetch(`http://localhost:8088/selectedBooks?userId=${libraryUserObject.id}&_expand=book`)
-                                                .then(response => response.json())
-                                                .then((bookArray) => {
-                                                    setSelected(bookArray)
-                                                })
-                                        }
+                        return <section className="selectedBooks">
+                            <img src={book?.book?.imageURL} height="150px" width="120px" />
+                            <div className="library__title">{book?.book?.title}</div>
+                            <div className="library__author">Written by {book?.book?.author}</div>
+                            <div className="delete__button">
+                            <button
+                                onClick={
+                                    () => {
+                                        DeleteBookFromList(book.id)
+                                        fetch(`http://localhost:8088/selectedBooks?userId=${libraryUserObject.id}&_expand=book`)
+                                            .then(response => response.json())
+                                            .then((bookArray) => {
+                                                setSelected(bookArray)
+                                            })
                                     }
-                                >
-                                    Delete Book
-                                </button>
-                            </section>
-                        
+                                }
+                            >
+                                Delete Book
+                            </button>
+                            </div>
+                        </section>
+
                     }
 
                 )

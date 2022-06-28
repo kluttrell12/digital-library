@@ -1,5 +1,6 @@
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
+import "./RecForm.css"
 
 export const Form = () => {
 
@@ -25,8 +26,7 @@ export const Form = () => {
         ]
 
         return <article>
-            <div className="genreSelect">
-                <br />
+            <div>
                 <select onChange={
                     (evt) => {
                         const copy = { ...rec }
@@ -76,15 +76,21 @@ export const Form = () => {
 
     return (
         <form className="recForm">
-            <h2 className="recForm__title">New Book Recommendation Form</h2>
+            <div className="recForm__title">New Book Recommendation Form</div>
+            <div className="button__library">
+                <button onClick={() => navigate("/library")}>Back to Library</button>
+                <button onClick={() => navigate("/library/moods")}>See Books sorted by Mood</button>
+                <button onClick={() => navigate("/library/recommendation")}>Recommend a book</button>
+                <button onClick={() => navigate("/library/myList")}>See My List of Books</button>
+            </div>
             <fieldset>
-                <div className="form-group">
-                    <label htmlFor="bookTitle">Book Title:</label>
+                <div className="form-group_1">
+                    <label className="book__title" htmlFor="bookTitle">Title</label>
                     <input
                         required autoFocus
                         type="text"
                         className="form-control"
-                        placeholder="Title of Book..."
+                        placeholder=""
                         value={rec.title}
                         onChange={
                             (evt) => {
@@ -96,13 +102,13 @@ export const Form = () => {
                 </div>
             </fieldset>
             <fieldset>
-                <div className="form-group">
-                    <label htmlFor="bookAuthor">Book Author:</label>
+                <div className="form-group_2">
+                    <label className="book__author" htmlFor="bookAuthor">Author</label>
                     <input
                         required autoFocus
                         type="text"
                         className="form-control"
-                        placeholder="Author of Book..."
+                        placeholder=""
                         value={rec.author}
                         onChange={
                             (evt) => {
@@ -114,20 +120,21 @@ export const Form = () => {
                 </div>
             </fieldset>
             <fieldset>
-                <div className="form-group">
-                    <label htmlFor="Genres">Select a Genre</label>
-                    <div>
-                        {HandleGenreRadioButtons()}
+                <section className="form-group_3">
+
+                    <label className="book__genre" htmlFor="Genres">Select a Genre</label>
+                    {HandleGenreRadioButtons()}
+                    <div className="submit__button">
+                        <button
+                            onClick={
+                                (clickEvent) => handleSaveButtonClick(clickEvent)
+                            }
+                        >
+                            Submit Book
+                        </button>
                     </div>
-                </div>
+                </section>
             </fieldset>
-            <button
-                onClick={
-                    (clickEvent) => handleSaveButtonClick(clickEvent)
-                }
-                className="btn btn-primary">
-                Submit Recommendation
-            </button>
         </form>
     )
 }

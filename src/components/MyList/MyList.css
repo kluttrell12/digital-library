@@ -1,0 +1,33 @@
+.bookContainer {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: left;
+    justify-content: center;
+}
+
+.button_List {
+    display: flex;
+    justify-content: center ;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+
+}
+.titlePage {
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1.9rem;
+    padding-top: 5rem
+}
+.selectedBooks{
+    text-align: center;
+    margin: 3.8rem
+
+}
+.delete__button{
+
+    display: flex;
+    justify-content: center;
+    padding-top: .5rem;
+
+}

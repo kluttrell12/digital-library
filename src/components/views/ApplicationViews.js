@@ -8,7 +8,7 @@ import { NewReaderForm } from "../newReaderForm/NewReaderForm"
 import { ProfileSuccessChange } from "../Profile/ProfileSuccessChange"
 import { ReaderForm } from "../Profile/ReaderForm"
 import { Form } from "../RecommendationForm/Form"
-import { SuccessPage } from "../RecommendationForm/SuccessPage"
+import { SuccessPage } from "../SuccessPage/SuccessPage"
 
 
 export const ApplicationViews = () => {

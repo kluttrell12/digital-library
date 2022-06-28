@@ -1,5 +1,6 @@
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
+import "./NewReaderForm.css"
 
 export const NewReaderForm = () => {
 
@@ -74,17 +75,17 @@ export const NewReaderForm = () => {
 
     return (
         <form className="newReaderForm">
-            <h2 className="recForm__title">Please Fill Out our New Reader Form</h2>
+            <div className="readerForm__title">Please Fill Out our New Reader Form</div>
             <fieldset>
-            <div className="form-group">
-                    <label htmlFor="favoriteGenre">Select a Favorite Genre</label>
-                    <div>
+                <section className="reader_form">
+                    <div className="favoriteGenreSelect">
+                        <label htmlFor="favoriteGenre">Select a Favorite Genre</label>
                         {HandleGenreRadioButtons()}
                     </div>
-                </div>
+                </section>
             </fieldset>
             <fieldset>
-            <div className="form-group">
+                <div className="form-group_reader">
                     <label htmlFor="booksRead">Books Read:</label>
                     <input type="number"
                         className="form-control"
@@ -98,13 +99,15 @@ export const NewReaderForm = () => {
                         } />
                 </div>
             </fieldset>
+            <div className="buttonNewReader">
             <button
                 onClick={
                     (clickEvent) => handleSaveButtonClick(clickEvent)
                 }
-                className="btn btn-primary">
+                className="readerFormButton">
                 Go to Digital Library
             </button>
+            </div>
         </form>
     )
 }

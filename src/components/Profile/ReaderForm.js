@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
+import "./Profile.css"
 
 export const ReaderForm = () => {
 
@@ -34,23 +35,25 @@ export const ReaderForm = () => {
             { label: "Romance", value: "Romance" }
         ]
 
-        return <article>
+        return <article className="genre__profile_container">
             <div className="genreSelect">
+                <div>Favorite Genre:    {profile.favoriteGenre}
                 <br />
-                <div>Favorite Genre: {profile.favoriteGenre}</div>
-                <select 
-                onChange={
-                    (evt) => {
-                        const copy = { ...profile }
-                        copy.favoriteGenre = evt.target.value
-                        updateProfile(copy)
-                    }
-                } >
-                    <option value="Select a genre">
-                        -- Select a genre --
-                    </option>
-                    {genres.map((genre) => <option value={genre.value}>{genre.label}</option>)}
-                </select>
+                <br />
+                    <select
+                        onChange={
+                            (evt) => {
+                                const copy = { ...profile }
+                                copy.favoriteGenre = evt.target.value
+                                updateProfile(copy)
+                            }
+                        } >
+                        <option value="Select a genre">
+                            -- Select a genre --
+                        </option>
+                        {genres.map((genre) => <option value={genre.value}>{genre.label}</option>)}
+                    </select>
+                </div>
             </div>
 
         </article>
@@ -76,36 +79,35 @@ export const ReaderForm = () => {
     }
 
     return (
-        <form className="profile">
-            <h2 className="profile__title">Edit Your Reader Profile</h2>
+        <form className="profile__container">
+            <div className="profile__title">Edit Your Reader Profile</div>
             <fieldset>
-                <div className="form-group">
-                    <label htmlFor="favoriteGenre">Select a Favorite Genre</label>
-                    <div>
-                        {HandleGenreRadioButtons()}
+                {HandleGenreRadioButtons()}
+            </fieldset>
+            <fieldset>
+                <div className="form-group_profile2">
+                    <div className="label__genreSelect">
+                        <label className="label" htmlFor="booksRead">Books Read:</label>
+                        <input type="number"
+                            className="input"
+                            value={profile.booksRead}
+                            onChange={
+                                (evt) => {
+                                    const copy = { ...profile }
+                                    copy.booksRead = parseInt(evt.target.value)
+                                    updateProfile(copy)
+                                }
+                            } />
+                        <div className="btn-submit">
+                            <button
+                                onClick={(clickEvent) => handleSaveButtonClick(clickEvent)}
+                            >
+                                Save Changes
+                            </button>
+                        </div>
                     </div>
                 </div>
             </fieldset>
-            <fieldset>
-                <div className="form-group">
-                    <label htmlFor="booksRead">Books Read:</label>
-                    <input type="number"
-                        className="form-control"
-                        value={profile.booksRead}
-                        onChange={
-                            (evt) => {
-                                const copy = { ...profile }
-                                copy.booksRead = parseInt(evt.target.value)
-                                updateProfile(copy)
-                            }
-                        } />
-                </div>
-            </fieldset>
-            <button
-                onClick={(clickEvent) => handleSaveButtonClick(clickEvent)}
-                className="btn btn-primary">
-                Save Changes
-            </button>
         </form>
     )
 }
