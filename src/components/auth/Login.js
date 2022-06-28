@@ -41,22 +41,12 @@ export const Login = () => {
                         <button>
                             Sign in
                         </button>
-                    </fieldset>
-                </form>
-            </section>
             <section className="link--register">
                 <Link to="/register">Become a member today!</Link>
             </section>
-            <footer>
-            <div className="footer__Copyright">&copy;Digital Mood Library</div>
-            <div className="footer__Contact">
-                <p>Contact</p>
-                <p>Digital Mood Library</p>
-                <p>Town, State Zip Code</p>
-                <p>Phone Number</p>
-                <p>Email</p>
-                </div>
-            </footer>
+                    </fieldset>
+                </form>
+            </section>
         </main>
     )
 }

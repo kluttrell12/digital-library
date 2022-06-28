@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
 import { GenreBookList } from "./GenreBookList"
+import "./Genres.css"
 
 
 export const Genres = () => {
@@ -18,31 +19,27 @@ export const Genres = () => {
     )
 
     return <>
-
-    <h3>Books by Genre</h3>
+    <div className="titlePage">Books by Genre</div>
+    <div className="button__library">
     <button onClick={() => navigate("/library")}>Back to Library</button>
-    <br></br>
     <button onClick={() => navigate("/library/moods")}>See Books sorted by Mood</button>
-    <br></br>
     <button onClick={() => navigate("/library/recommendation")}>Recommend a book</button>
-    <br></br>
     <button onClick={() => navigate("/library/myList")}>See My List of Books</button>
-        <article>
+    </div>
+        <article className="genreContainer" >
             {
                 genres.map(
                     (genre) => {
                         return <section className="genres" key={genre.id}>
-                            <div>
-                                <h3>{genre.genre}</h3>
+                            <div className="genre">{genre.genre}</div>
+                               
                                 <div>
                                 <GenreBookList genre={genre}/>
                             </div>
-
-                            </div>
                         </section>
-
                     })
             }
+              
         </article>
 
 

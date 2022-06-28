@@ -46,19 +46,16 @@ fieldset {
     background-color: hsla(0,0%,100%,0.40);
     background-blend-mode: overlay;
     background-repeat: no-repeat;
+    padding: 2rem;
 }
 .button--close {
     position: relative;
     bottom: -2rem;
 }
 
-.footer__Contact{
-    padding-top: 10px;
-}
-.footer__Copyright{
-    padding-top: 10px;
-}
+
 
 .link--register{
-    padding-bottom: 10rem;
+    padding-left: 15rem;
+    padding-top: 5rem;
 }

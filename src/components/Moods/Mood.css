@@ -1,0 +1,47 @@
+
+
+.moodContainer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+
+.moods {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+    width: 300px;
+    border: 2px solid white;
+    border-radius: 5px;
+    border-style: outset;
+    padding: auto;
+    background-color:rgb(182, 252, 209);
+
+}
+
+.mood {
+    display: flex;
+    padding: 1rem 1rem 1rem;
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.titlePage {
+    display: flex;
+    font-weight: bold;
+    font-size: 1.8rem;
+    padding: 10px 10px 10px;
+}
+
+.button__library {
+    display: flex;
+    flex-direction: row;
+    justify-content:space-evenly;
+    padding: 2rem
+}
+
+
+

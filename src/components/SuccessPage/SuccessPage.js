@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
+import "./SuccessPage.css"
 
 
 export const SuccessPage = () => {
@@ -26,23 +27,22 @@ export const SuccessPage = () => {
 
     return <>
 
-        <h3>Thank you for your Recommendation!</h3>
-        <button onClick={() => navigate("/library")}>Back to Library</button>
-        <br />
+        <div className="title__page">Thank you for your Recommendation!</div>
+        <div className="book__info"> Recommended Book Info </div>
 
-            <div> Recommended Book Info </div>
-
-        <article>
+        <article className="bookRecommendations">
 
             {
                 books.map(book => {
 
                     return <section className="bookRecommendation" key={book.id}>
-                        <br />
                         <div> Book Genre: {book.bookGenre} </div>
                         <div> Book Author: {book.bookAuthor} </div>
                         <div> Book Title: {book.bookTitle} </div>
+                        <div className="library__button"><button onClick={() => navigate("/library")}>Back to Library</button></div>
+
                     </section>
+
 
                 })
 

@@ -1,0 +1,48 @@
+
+.genreContainer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+
+.genres {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    width: 300px;
+    border: 2px solid white;
+    border-radius: 10px;
+    border-style: outset;
+    padding: auto;
+    background-color:rgb(225, 250, 235);
+}
+
+.genre {
+    display: flex;
+    padding: 1rem 1rem 1rem;
+    font-weight: bold;
+    font-size: 1.5rem;
+    text-decoration: underline;
+    
+}
+
+.titlePage {
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1.8rem;
+
+}
+
+.button__library {
+    display: flex;
+    flex-direction: row;
+    justify-content:space-evenly;
+    padding: 2rem
+}
+
+

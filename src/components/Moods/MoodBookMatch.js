@@ -35,14 +35,14 @@ export const MoodBookList = ({mood}) => {
             {
                 books.map(
                     (book) => {
-                        return <section className="library" key={book.id}>
-                            <p>{book.title}</p>
-                            <p>Written By {book.author}</p>
-                            <br></br>
-                            <button
-                                onClick={() => AddBookToMyList(libraryUserObject.id, book.id)}
-                            >Add to My List</button>
-                        </section>
+                        return  <section className="library" key={book.id}>
+                        <img src={book.imageURL} height="150px" width="120px" />
+                       <div className="library__title">{book.title}</div>
+                       <div className="library__author">Written by {book.author}</div>
+                       <button
+                           onClick={() => AddBookToMyList(libraryUserObject.id, book.id)}
+                       >Add to My List</button>
+                   </section>
 
                     })
 

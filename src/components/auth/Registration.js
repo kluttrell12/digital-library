@@ -66,16 +66,7 @@ export const Register = (props) => {
                     type="submit"> Register </button>
                 </fieldset>
             </form>
-            <footer>
-            <div className="footer__Copyright">&copy;Digital Mood Library</div>
-            <div className="footer__Contact">
-                <p>Contact</p>
-                <p>Digital Mood Library</p>
-                <p>Town, State Zip Code</p>
-                <p>Phone Number</p>
-                <p>Email</p>
-                </div>
-            </footer>
+           
         </main>
     )
 }
