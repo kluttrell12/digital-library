@@ -10,7 +10,7 @@ export const ProfileSuccessChange = () => {
     return <article>
         <section>
             <div className="profile__title">Your information has been updated!</div>
-          <div className="profile__title">  <button onClick={() => navigate("/home")}>Back to Home Page</button> </div>
+          <div className="success_button">  <button id="boredB" onClick={() => navigate("/home")}>Back to Home Page</button> </div>
         </section>
     </article>
 }

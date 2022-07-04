@@ -1,21 +1,48 @@
 @import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Quicksand&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@1,200&family=Water+Brush&display=swap');
 
 
 body {
   margin: 30px;
-  font-family: 'Muli', sans-serif;
-  background-color: rgb(199, 240, 251);
+  font-family: 'Urbanist', sans-serif;
+  font-style: bold;
+  color: #224e6a;
+  background-color: rgb(229, 247, 252);
 }
 
 button {
-  display: flex;
-  background-color: rgb(240, 250, 253);
-  color: black;
-  font-family: 'Muli', sans-serif;
-  border-style: outset;
-  border-radius: 12px
+  background-color: initial;
+  background-image: linear-gradient(-180deg, #224e6a, #21639e);
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0 2px 4px;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font-family: 'Urbanist', sans-serif;
+  font-style: bold;
+  height: 44px;
+  line-height: 44px;
+  outline: 0;
+  overflow: hidden;
+  padding: 0 20px;
+  pointer-events: auto;
+  position: relative;
+  text-align: center;
+  touch-action: manipulation;
+  user-select: none;
+  -webkit-user-select: none;
+  vertical-align: top;
+  white-space: nowrap;
+  width: 100%;
+  z-index: 9;
+  border: 0;
 }
+
+button:hover {
+  background: #0084bd;
+}
+
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',

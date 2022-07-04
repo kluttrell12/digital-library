@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@1,200&family=Water+Brush&display=swap');
 
 /* --- form --- */
 
@@ -16,7 +17,7 @@
     border: 1px solid white;
     border-radius: 10rem;
     border-style: outset;
-    background-color: rgb(182, 252, 209);
+    background-color: rgb(206, 236, 252);
 }
 
 .form-group_1 {
@@ -28,6 +29,10 @@
 .form-control {
     width: 42%;
     height: 25%;
+    font-family: 'Urbanist', sans-serif;
+    color: #224e6a;
+    font-size: 1.3rem;
+    
 
 }
 
@@ -73,14 +78,13 @@
 }
 /* --- buttons --- */
 
-.submit__button {
-    display:flex;
-    padding-left: 5rem;
+.button__container__recForm {
+    display: flex;
+    padding-left: 1rem;
     height: 10%;  
 }
-.button__library {
-    display: flex;
-    flex-direction: row;
-    justify-content:space-evenly;
-    padding: 2rem
+
+.button__container__Library {
+    padding-left: 1rem;
 }
+

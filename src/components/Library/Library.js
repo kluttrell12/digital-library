@@ -18,9 +18,9 @@ const AddBookToMyList = (userId, bookId) => {
 
 export const Library = () => {
 
+    const navigate = useNavigate()
     const [books, setBooks] = useState([])
 
-    const navigate = useNavigate()
 
     useEffect(
         () => {
@@ -34,14 +34,8 @@ export const Library = () => {
     )
 
     return <>
-        <div className="titlePage">Complete Collection of Books</div>
-        <div className="button__library">
-            <button onClick={() => navigate("/library/moods")}>See books sorted by Mood</button>
-            <button onClick={() => navigate("/library/genres")}>See Books sorted by Genre</button>
-            <button onClick={() => navigate("/library/myList")}>See My List of Books</button>
-            <button onClick={() => navigate("/library/recommendation")}>Recommend a book</button>
-        </div>
 
+        <div className="titlePage">Complete Collection of Books</div>
         <article className="library__container">
             {
                 books.map(
@@ -51,11 +45,16 @@ export const Library = () => {
                             <div className="library__title">{book.title}</div>
                             <div className="library__author">Written by {book.author}</div>
                             <button
+                            className="addButton"
                                 onClick={() => AddBookToMyList(libraryUserObject.id, book.id)}
                             >Add to My List</button>
                         </section>
                     })
             }
+        </article>
+        <article className="button__container">
+            <div className="home_button"><button id="homeB" onClick={() => navigate("/library/myList")}>See My List of Books</button></div>
+            <div className="home_button"><button id="homeB" onClick={() => navigate("/library/recommendation")}>Recommend a book</button></div>
         </article>
 
 

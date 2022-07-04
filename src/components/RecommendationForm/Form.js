@@ -43,7 +43,6 @@ export const Form = () => {
 
         </article>
 
-
     }
 
     const handleSaveButtonClick = (event) => {
@@ -77,12 +76,6 @@ export const Form = () => {
     return (
         <form className="recForm">
             <div className="recForm__title">New Book Recommendation Form</div>
-            <div className="button__library">
-                <button onClick={() => navigate("/library")}>Back to Library</button>
-                <button onClick={() => navigate("/library/moods")}>See Books sorted by Mood</button>
-                <button onClick={() => navigate("/library/recommendation")}>Recommend a book</button>
-                <button onClick={() => navigate("/library/myList")}>See My List of Books</button>
-            </div>
             <fieldset>
                 <div className="form-group_1">
                     <label className="book__title" htmlFor="bookTitle">Title</label>
@@ -124,14 +117,18 @@ export const Form = () => {
 
                     <label className="book__genre" htmlFor="Genres">Select a Genre</label>
                     {HandleGenreRadioButtons()}
-                    <div className="submit__button">
-                        <button
+                    <div className="button__container__recForm">
+                        <button id="boredB"
                             onClick={
                                 (clickEvent) => handleSaveButtonClick(clickEvent)
                             }
                         >
                             Submit Book
                         </button>
+                        <div className="button__container__Library">
+                        <button id="boredB" onClick={() => navigate("/library")}>Back to Library</button>
+                        </div>
+
                     </div>
                 </section>
             </fieldset>

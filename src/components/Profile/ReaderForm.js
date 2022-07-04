@@ -99,7 +99,7 @@ export const ReaderForm = () => {
                                 }
                             } />
                         <div className="btn-submit">
-                            <button
+                            <button id="boredB"
                                 onClick={(clickEvent) => handleSaveButtonClick(clickEvent)}
                             >
                                 Save Changes

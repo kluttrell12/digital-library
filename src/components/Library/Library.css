@@ -11,6 +11,11 @@
 .library__title {
     font-weight: bold;
     font-size: 1.3rem;
+    padding-top: 1rem
+}
+
+.library__author {
+    padding-bottom: 1rem;
 }
 
 .library__container {
@@ -19,18 +24,26 @@
     flex-wrap: wrap;
     justify-content: center;
     border: 1px solid white;
-    border-radius: 10rem;
-    border-style: outset;
-    background-color: rgb(182, 252, 209);
+    border-radius: 2rem;
+    background-color: rgb(203, 224, 235);
     padding-top: 3rem;
     padding-bottom: 3rem;
 }
 
-.button__library {
+.button__container {
+    width: 15%;
+    padding-left: 30rem;
     display: flex;
     flex-direction: row;
-    justify-content:space-evenly;
-    padding: 2rem
+}
+
+.addButton {
+    width: 50%
+}
+
+.home_button {
+    display:flex;
+    padding: 1rem;
 }
 
 .titlePage {
@@ -45,4 +58,13 @@
     justify-content: space-evenly;
     flex-direction: row;
 }
+
+#homeB {
+    background-image: linear-gradient(-180deg, #4e2c5f, #9e8da9);
+}
+
+#homeB:hover {
+    background: rgb(146, 64, 146);
+}
+
 

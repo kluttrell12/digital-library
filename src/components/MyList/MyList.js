@@ -35,8 +35,10 @@ export const MyList = () => {
 
     return <>
         <div className="titlePage">Your List of Books</div>
+        <div className="buttonListContainer">
         <div className="button_List">
-        <button onClick={() => navigate("/library")}>Return to Library</button>
+        <button id="buttonListB" onClick={() => navigate("/library")}>Return to Library</button>
+        </div>
         </div>
 
 
@@ -50,6 +52,7 @@ export const MyList = () => {
                             <div className="library__author">Written by {book?.book?.author}</div>
                             <div className="delete__button">
                             <button
+                                className="listB"
                                 onClick={
                                     () => {
                                         DeleteBookFromList(book.id)

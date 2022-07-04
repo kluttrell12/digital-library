@@ -40,9 +40,11 @@ export const GenreBookList = ({genre}) => {
                              <img src={book.imageURL} height="150px" width="120px" />
                             <div className="library__title">{book.title}</div>
                             <div className="library__author">Written by {book.author}</div>
+                            <div className="addButton">
                             <button
                                 onClick={() => AddBookToMyList(libraryUserObject.id, book.id)}
                             >Add to My List</button>
+                            </div>
                         </section>
 
                     })

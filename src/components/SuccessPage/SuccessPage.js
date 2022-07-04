@@ -35,11 +35,17 @@ export const SuccessPage = () => {
             {
                 books.map(book => {
 
-                    return <section className="bookRecommendation" key={book.id}>
-                        <div> Book Genre: {book.bookGenre} </div>
-                        <div> Book Author: {book.bookAuthor} </div>
-                        <div> Book Title: {book.bookTitle} </div>
-                        <div className="library__button"><button onClick={() => navigate("/library")}>Back to Library</button></div>
+                    return <section key={book.id}>
+                        <div className="bookRecContainer">
+                        <div className="bookRecommendation">
+                        <span>
+                        <div className="bookSuccess"> Book Genre: {book.bookGenre} </div>
+                        <div className="bookSuccess"> Book Author: {book.bookAuthor} </div>
+                        <div className="bookSuccess"> Book Title: {book.bookTitle} </div>
+                        </span>
+                        </div>
+                        </div>
+                        <div className="library__button"><button id="boredB"onClick={() => navigate("/library")}>Back to Library</button></div>
 
                     </section>
 
