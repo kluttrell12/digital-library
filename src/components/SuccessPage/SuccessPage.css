@@ -8,8 +8,22 @@
 }
 
 .bookRecommendation {
-    padding-left: 14.5rem;
-    padding-top: 1.5rem
+    display: inline-block;
+    padding: 1.5rem;
+    background-color: rgb(206, 236, 252);
+    border: 1px solid #224e6a;
+    border-radius: 1rem;
+    padding: auto;
+}
+
+.bookRecContainer {
+    padding-left: 15rem;
+    padding-top: 1rem;
+    
+}
+
+.bookSuccess {
+    font-size: 1.3rem;
 }
 
 .book__info {
@@ -20,4 +34,6 @@
 
 .library__button {
     padding-top: 2rem;
+    width: 10%;
+    padding-left: 15rem;
 }

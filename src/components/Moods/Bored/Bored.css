@@ -1,61 +1,53 @@
-
-.genreContainer {
+.bored__Container {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
+    border: 1px solid white;
+    border-radius: 2rem;
+    background-color: rgb(203, 224, 235);
+    padding-top: 3rem;
+    padding-bottom: 3rem;
 }
 
+.bored_library {
 
-.genres {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     margin: 10px;
     width: 300px;
-    padding: auto;
+    text-align: center;
 }
 
-.genre {
-    display: flex;
-    padding: 1rem 1rem 1rem;
-    font-weight: bold;
-    font-size: 1.5rem;
-    text-decoration: underline;
-    
-}
-
-.titlePage {
+.titlePage__bored {
     display: flex;
     justify-content: center;
     font-weight: bold;
     font-size: 1.8rem;
-
+    padding-bottom: 2rem;
+    padding-top: 2rem;
 }
 
-.buttonGenre__library {
+.bored_button_container {
     width: 15%;
     padding-left: 30rem;
     display: flex;
     flex-direction: row;
 }
 
-.genre_button {
 
+.bored_button {
     display:flex;
     padding: 1rem;
-
+  
 }
 
-#genreB {
+#boredB {
     background-image: linear-gradient(-180deg, #4e2c5f, #9e8da9);
 }
 
-#genreB:hover {
+#boredB:hover {
     background: rgb(146, 64, 146);
 }
-
-
-
-

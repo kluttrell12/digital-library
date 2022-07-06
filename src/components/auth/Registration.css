@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@1,200&family=Water+Brush&display=swap');
+
+
 .h1, h1 {
     font-size: 2.5rem;
 }
@@ -12,6 +15,17 @@ fieldset {
     margin: 0 auto;
     text-align: left;
 }
+
+.login__logo {
+    padding-top: 2rem;
+    padding-right: 1rem;
+}
+
+.form__login__up {
+    display: flex;
+    justify-content: left;
+
+}
 .form--login > fieldset > input[type="email"] {
     width: 25em;
 }
@@ -19,11 +33,11 @@ fieldset {
     width: 8rem;
     display: inline-block;
 }
-.form-control {
+.form-control__login {
     display: block;
-    width: 94%;
     height: calc(1.5em + .75rem + 2px);
     padding: .375rem .75rem;
+    font-family: 'Urbanist', sans-serif;
     font-size: 1rem;
     font-weight: 400;
     line-height: 1.5;
@@ -35,6 +49,7 @@ fieldset {
     -webkit-transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
     transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 }
+
 .container--login {
     text-align: center;
 }
@@ -46,19 +61,21 @@ fieldset {
     background-color: hsla(0,0%,100%,0.40);
     background-blend-mode: overlay;
     background-repeat: no-repeat;
+    padding: 2rem;
 }
 .button--close {
     position: relative;
     bottom: -2rem;
 }
 
-.footer__Contact{
-    padding-top: 10px;
-}
-.footer__Copyright{
-    padding-top: 10px;
+.button__login {
+    width: 15%;
 }
 
-.link--register{
-    padding-bottom: 10rem;
+
+
+.button__register{
+    padding-top: 5rem;
+    width: 25%;
 }
+

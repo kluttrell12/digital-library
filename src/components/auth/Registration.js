@@ -46,23 +46,30 @@ export const Register = (props) => {
         setReader(copy)
     }
     return (
-        <main style={{ textAlign: "center" }}>
+        <main className="container--login" style={{ textAlign: "center" }}>
             <form className="form--login" onSubmit={handleRegister}>
-                <h1 className="h3 mb-3 font-weight-normal">Please Register to use Digital Library</h1>
-                <fieldset>
+            <div className="form__login__up">
+                        <div className="login__logo">
+                        <img src="https://ncwc.edu/wp-content/uploads/2016/06/library-icon.png" height={"50px"} width={"50px"}/>
+                        </div>
+                    <h1>Please Register to use Digital Library</h1>
+                    </div>
+               <fieldset>
                     <label htmlFor="fullName"> Full Name </label>
                     <input onChange={updateReader}
-                           type="text" id="fullName" className="form-control"
+                           type="text" id="fullName" className="form-control__login"
                            placeholder="Enter your name" required autoFocus />
                 </fieldset>
                 <fieldset>
                     <label htmlFor="email"> Email address </label>
                     <input onChange={updateReader}
-                        type="email" id="email" className="form-control"
+                        type="email" id="email" className="form-control__login"
                         placeholder="Email address" required />
                 </fieldset>
                 <fieldset>
                     <button
+                    id="boredB"
+                    className="button__login"
                     type="submit"> Register </button>
                 </fieldset>
             </form>

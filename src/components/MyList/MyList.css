@@ -6,11 +6,8 @@
 }
 
 .button_List {
-    display: flex;
-    justify-content: center ;
-    padding-top: 2rem;
-    padding-bottom: 2rem;
-
+    display:flex;
+    padding: 1rem;
 }
 .titlePage {
     display: flex;
@@ -26,8 +23,32 @@
 }
 .delete__button{
 
-    display: flex;
-    justify-content: center;
-    padding-top: .5rem;
+    display:flex;
+    padding: 1rem;
 
+}
+
+.buttonListContainer {
+
+    width: 15%;
+    padding-left: 38rem;
+    display: flex;
+    flex-direction: row;
+
+}
+
+#buttonListB {
+    background-image: linear-gradient(-180deg, #4e2c5f, #9e8da9);
+}
+
+#buttonListB:hover {
+    background: rgb(146, 64, 146);
+}
+
+#listB {
+    background-image: linear-gradient(-180deg, #4e2c5f, #9e8da9);
+}
+
+#listB:hover {
+    background: rgb(146, 64, 146);
 }

@@ -20,12 +20,6 @@ export const Genres = () => {
 
     return <>
     <div className="titlePage">Books by Genre</div>
-    <div className="button__library">
-    <button onClick={() => navigate("/library")}>Back to Library</button>
-    <button onClick={() => navigate("/library/moods")}>See Books sorted by Mood</button>
-    <button onClick={() => navigate("/library/recommendation")}>Recommend a book</button>
-    <button onClick={() => navigate("/library/myList")}>See My List of Books</button>
-    </div>
         <article className="genreContainer" >
             {
                 genres.map(
@@ -41,6 +35,10 @@ export const Genres = () => {
             }
               
         </article>
+    <div className="buttonGenre__library">
+    <div className="genre_button"><button id="genreB" onClick={() => navigate("/library/recommendation")}>Recommend a book</button></div>
+    <div className="genre_button"><button id="genreB" onClick={() => navigate("/library/myList")}>See My List of Books</button></div>
+    </div>
 
 
     </>

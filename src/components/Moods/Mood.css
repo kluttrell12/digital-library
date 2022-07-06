@@ -1,29 +1,59 @@
-
-
 .moodContainer {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
-}
+    background-color: rgb(203, 224, 235);
 
+}
 
 .moods {
     display: flex;
     flex-direction: column;
-    align-items: center;
     margin: 20px;
     width: 300px;
-    border: 2px solid white;
     border-radius: 5px;
-    border-style: outset;
     padding: auto;
-    background-color:rgb(182, 252, 209);
+}
 
+.hoverImage {
+    padding: 1.5rem
+}
+
+.hoverImage {
+    position: relative;
+    max-width: 500px;
+}
+
+
+
+.hoverText {
+    box-sizing: border-box;
+    width: 94.5%;
+    padding: 10px;
+    top: 0;
+    left: 0;
+    color: #224e6a;
+    font-size: 2rem;
+    font-style: bold;
+}
+
+.hoverText {
+    visibility: none;
+    opacity: 0;
+    transition: opacity 0.3s;
+    text-align: center;
+}
+
+.hoverImage:hover .hoverText {
+    visibility: visible;
+    opacity: 1;
 }
 
 .mood {
     display: flex;
+    flex-direction: row;
+    justify-content: center;
     padding: 1rem 1rem 1rem;
     font-weight: bold;
     font-size: 1.5rem;
@@ -33,15 +63,25 @@
     display: flex;
     font-weight: bold;
     font-size: 1.8rem;
-    padding: 10px 10px 10px;
+    padding-bottom: 4rem;
 }
 
-.button__library {
+.mood_button_container {
+    width: 15%;
+    padding-left: 30rem;
     display: flex;
     flex-direction: row;
-    justify-content:space-evenly;
-    padding: 2rem
 }
 
+.mood_button {
+    display:flex;
+    padding: 1rem;  
+}
 
+#moodB {
+    background-image: linear-gradient(-180deg, #4e2c5f, #9e8da9);
+}
 
+#moodB:hover {
+    background: rgb(146, 64, 146);
+}

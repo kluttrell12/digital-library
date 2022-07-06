@@ -1,28 +1,58 @@
 @import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Quicksand&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@1,200&family=Water+Brush&display=swap');
+
 
 
 .navbar {
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
-    padding: 1rem 1rem 1rem;
+
 }
+
+
 .navbar__item {
-    flex-basis: 5%;
-    text-align: center;
-    list-style-type: none; 
-  
+    padding-top: .25rem;
+    padding-left: 4rem;
+
 }
+
+.logout__ {
+    padding-left: 20rem;
+}
+
+.logoImg {
+    padding-left: 10rem;
+}
+
+.navBar_item_container {
+    display: flex;
+    flex-direction: row;
+    padding-left: 5rem;
+}
+
+
+.logo__navbar__title {
+    padding-left: 1rem;
+    padding-top: .25rem;
+    font-size: 1.3rem;
+
+}
+
 /* .navbar__logout {
     
 } */
 
 .navbar__link {
-    padding: .35rem;
-    font-family: 'Muli', sans-serif;
-    font-size: 1.2rem;
+    font-family: 'Urbanist', sans-serif;
+    font-style: bold;
+    color: #224e6a;
+    font-size: 1.3rem;
     font-style: bold;
     text-decoration: none;
-    color: black;
 }
+
+.navbar__link:hover {
+    text-decoration: underline;
+    font-weight: bold;
+   }
