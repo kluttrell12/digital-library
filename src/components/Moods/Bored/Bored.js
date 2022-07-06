@@ -54,6 +54,7 @@ export const BoredList = () => {
                                 <div className="library__title">{book.title}</div>
                                 <div className="library__author">Written by {book.author}</div>
                                 <button
+                                className="addBored"
                                     onClick={() => AddBookToMyList(libraryUserObject.id, book.id)}
                                 >Add to My List</button>
                             </div>
